@@ -1,8 +1,16 @@
 # Filters
-Short description and motivation.
+This is a helper class to translate a string of filters into usable sql to modify active record queries.
+
+Example query:
+ - `?filters=status==verified,age>18,weight>=<110;210`
+
+This query translates to:
+ - WHERE status = 'verified'
+ - AND age > 18
+ - AND weight BETWEEN 110 AND 210
 
 ## Usage
-How to use my plugin.
+See the tests for usage and examples `/spec/filters_spec.rb`
 
 ## Installation
 Add this line to your application's Gemfile:
@@ -21,8 +29,8 @@ Or install it yourself as:
 $ gem install filters
 ```
 
-## Contributing
-Contribution directions go here.
+<!-- ## Contributing
+Contribution directions go here. -->
 
 ## License
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
